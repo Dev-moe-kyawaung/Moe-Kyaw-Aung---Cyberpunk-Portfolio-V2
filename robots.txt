@@ -1,0 +1,15 @@
+# Robots.txt for Moe Kyaw Aung Portfolio
+# https://dev-moe-kyawaung.github.io/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dev-moe-kyawaung.github.io/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
+
+# Disallow admin/private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
