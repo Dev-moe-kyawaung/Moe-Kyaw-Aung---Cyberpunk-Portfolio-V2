@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects & Services - Moe Kyaw Aung Senior Android Developer">
+    <title>Projects & Services - Moe Kyaw Aung Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-cyan: #00f3ff;
+            --neon-pink: #ff00ff;
+            --neon-purple: #bc13fe;
+            --neon-blue: #0066ff;
+            --dark-bg: #0a0a0f;
+            --darker-bg: #050508;
+            --card-bg: rgba(10, 10, 15, 0.85);
+            --glass-bg: rgba(0, 243, 255, 0.05);
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --error: #ff3366;
+            --success: #00ff88;
+            --font-primary: 'Rajdhani', sans-serif;
+            --font-display: 'Orbitron', sans-serif;
+            --font-code: 'Share Tech Mono', monospace;
+            --neon-glow-cyan: 0 0 10px rgba(0, 243, 255, 0.7), 0 0 20px rgba(0, 243, 255, 0.5), 0 0 30px rgba(0, 243, 255, 0.3);
+            --neon-glow-pink: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.3);
+            --hologram-glow: 0 0 20px rgba(0, 243, 255, 0.4), inset 0 0 20px rgba(0, 243, 255, 0.1);
+            --grid-size: 50px;
+            --grid-color: rgba(0, 243, 255, 0.1);
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-primary);
+            background: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(var(--grid-color) 1px, transparent 1px);
+            background-size: var(--grid-size) var(--grid-size);
+            pointer-events: none;
+            z-index: 0;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--darker-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-pink); }
+        
+        .navbar {
+            background: rgba(10, 10, 15, 0.95) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all var(--transition-medium);
+        }
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
+        }
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--neon-cyan) !important;
+            text-shadow: var(--neon-glow-cyan);
+        }
+        .navbar-nav .nav-link {
+            font-family: var(--font-display);
+            color: #ffffff !important;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem !important;
+            position: relative;
+            transition: all var(--transition-fast);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            transition: all var(--transition-fast);
+            transform: translateX(-50%);
+        }
+        .navbar-nav .nav-link:hover::before,
+        .navbar-nav .nav-link.active::before { width: 100%; }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--neon-cyan) !important;
+            text-shadow: var(--neon-glow-cyan);
+        }
+        .navbar-toggler {
+            border: 2px solid var(--neon-cyan);
+            padding: 0.5rem 1rem;
+        }
+        .navbar-toggler:hover {
+            background: var(--neon-cyan);
+            box-shadow: var(--neon-glow-cyan);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 243, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--neon-cyan);
+            text-shadow: var(--neon-glow-cyan);
+        }
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        #projects { padding: 100px 0; margin-top: 80px; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        .project-card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all var(--transition-slow);
+            transform-style: preserve-3d;
+        }
+        .project-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            border-color: var(--neon-cyan);
+            box-shadow: var(--hologram-glow), 0 20px 40px rgba(0, 243, 255, 0.3);
+        }
+        .project-image {
+            width: 100%; height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--neon-cyan);
+            transition: transform var(--transition-slow);
+        }
+        .project-card:hover .project-image { transform: scale(1.05); }
+        .project-content { padding: 2rem; }
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+        }
+        .project-description {
+            color: var(--silver);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .project-tech span {
+            background: rgba(255, 0, 255, 0.1);
+            border: 1px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: var(--font-code);
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-link {
+            color: var(--neon-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-link:hover { color: var(--neon-pink); }
+        .project-card {
+            animation: hologramPop 0.6s ease-out backwards;
+        }
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+        @keyframes hologramPop {
+            0% { opacity: 0; transform: scale(0.8) translateY(50px); filter: hue-rotate(90deg); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: hue-rotate(0deg); }
+        }
+        
+        #services {
+            padding: 100px 0;
+            background: var(--card-bg);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all var(--transition-medium);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-pink);
+            box-shadow: var(--neon-glow-pink);
+        }
+        .service-icon {
+            font-size: 4rem;
+            color: var(--neon-pink);
+            margin-bottom: 1.5rem;
+        }
+        .service-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        .service-description {
+            color: var(--silver);
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: var(--darker-bg);
+            border-top: 2px solid var(--neon-cyan);
+            padding: 60px 0 30px;
+            margin-top: 50px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+        }
+        .footer-section p,
+        .footer-section a {
+            color: var(--silver);
+            line-height: 1.8;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+        .footer-section a:hover {
+            color: var(--neon-pink);
+            padding-left: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 243, 255, 0.2);
+            color: var(--silver);
+        }
+        
+        @media (max-width: 992px) {
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .navbar-nav {
+                background: var(--dark-bg);
+                padding: 1rem;
+                margin-top: 1rem;
+                border-radius: 10px;
+                border: 1px solid rgba(0, 243, 255, 0.2);
+            }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 576px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fab fa-android me-2"></i>
+                Moe Kyaw Aung
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-skills.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects-services.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience-contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Portfolio Highlights</p>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <img src="https://picsum.photos/seed/project1/600/400" alt="E-Commerce App" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Mobile App</h3>
+                        <p class="project-description">
+                            A full-featured e-commerce application with real-time inventory, secure payments, and AI-powered recommendations.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Jetpack Compose</span>
+                            <span>Firebase</span>
+                            <span>Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://picsum.photos/seed/project2/600/400" alt="AI Chat" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">AI Chat Assistant</h3>
+                        <p class="project-description">
+                            An intelligent chat application with NLP capabilities, contextual understanding, and multi-language support.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>TensorFlow</span>
+                            <span>NLP</span>
+                            <span>ML Kit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://picsum.photos/seed/project3/600/400" alt="Cloud Dashboard" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Cloud Dashboard</h3>
+                        <p class="project-description">
+                            Enterprise cloud management dashboard with real-time monitoring, analytics, and automated deployment pipelines.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>AWS</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://picsum.photos/seed/project4/600/400" alt="Healthcare App" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Healthcare App</h3>
+                        <p class="project-description">
+                            HIPAA-compliant healthcare application with telemedicine features, secure messaging, and appointment scheduling.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Firebase</span>
+                            <span>HIPAA</span>
+                            <span>WebRTC</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://picsum.photos/seed/project5/600/400" alt="Finance Tracker" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Finance Tracker</h3>
+                        <p class="project-description">
+                            Personal finance management app with AI-powered insights, budget tracking, and investment portfolio management.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Room</span>
+                            <span>Machine Learning</span>
+                            <span>Charts</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://picsum.photos/seed/project6/600/400" alt="Social Media" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Social Media Platform</h3>
+                        <p class="project-description">
+                            A modern social media app with real-time updates, content sharing, and advanced privacy controls.
+                        </p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Firebase</span>
+                            <span>GraphQL</span>
+                            <span>WebSocket</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">What I Offer</p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="service-title">Android App Development</h3>
+                    <p class="service-description">
+                        Custom Android applications built with modern architecture, clean code, and exceptional user experiences.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="service-title">AI Integration</h3>
+                    <p class="service-description">
+                        Integrate machine learning and AI capabilities into your mobile and web applications for smarter experiences.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Scalable cloud architecture and deployment on AWS, GCP, or Azure with DevOps best practices.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="service-title">Full-Stack Development</h3>
+                    <p class="service-description">
+                        End-to-end web applications with modern frontend and backend technologies.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="service-title">Security Consulting</h3>
+                    <p class="service-description">
+                        Security audits, penetration testing, and compliance implementation for your applications.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">
+                        Improve app performance, reduce load times, and enhance user experience with expert optimization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Moe Kyaw Aung - Senior Android Developer with 12+ years of experience building world-class mobile and web applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about-skills.html">About</a></p>
+                    <p><a href="projects-services.html">Projects</a></p>
+                    <p><a href="experience-contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="https://github.com/Dev-moe-kyawaung/" target="_blank"><i class="fab fa-github me-2"></i>GitHub</a></p>
+                    <p><a href="https://gravatar.com/moekyawaung2026" target="_blank"><i class="fas fa-user me-2"></i>Gravatar</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Moe Kyaw Aung. All Rights Reserved. | Built with ❤️ and Cyberpunk Aesthetics</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => fadeObserver.observe(el));
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+                });
+            });
+            
+            console.log('✅ Projects & Services Page Loaded!');
+        });
+    </script>
+</body>
+</html>
