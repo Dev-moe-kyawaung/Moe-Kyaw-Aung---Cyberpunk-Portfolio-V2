@@ -1,0 +1,28 @@
+{
+  "name": "moe-kyaw-aung-portfolio",
+  "version": "2.0.0",
+  "description": "Cyberpunk Portfolio V2 - Senior Android Developer",
+  "author": "Moe Kyaw Aung",
+  "license": "MIT",
+  "scripts": {
+    "dev": "live-server --port=8000",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "gh-pages -d .",
+    "sitemap": "node scripts/generate-sitemap.js"
+  },
+  "devDependencies": {
+    "live-server": "^0.2.0",
+    "gh-pages": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dev-moe-kyawaung/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "android-developer",
+    "cyberpunk",
+    "kotlin",
+    "jetpack-compose"
+  ]
+}
