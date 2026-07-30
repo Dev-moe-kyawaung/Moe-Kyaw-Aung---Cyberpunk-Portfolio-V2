@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moe Kyaw Aung - Senior Android Developer with 12+ years of experience in Kotlin, Jetpack Compose, and modern Android architecture">
+    <meta name="keywords" content="Moe Kyaw Aung, Android Developer, Senior Developer, Kotlin, Jetpack Compose, Mobile Developer, Portfolio, Myanmar">
+    <meta name="author" content="Moe Kyaw Aung">
+    <meta name="theme-color" content="#00f3ff">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev-moe-kyawaung.github.io/">
+    <meta property="og:title" content="Moe Kyaw Aung | Senior Android Developer">
+    <meta property="og:description" content="Building world-class mobile and web applications with 12+ years of experience">
+    <meta property="og:image" content="https://gravatar.com/avatar/default">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dev-moe-kyawaung.github.io/">
+    <meta property="twitter:title" content="Moe Kyaw Aung | Senior Android Developer">
+    <meta property="twitter:description" content="Building world-class mobile and web applications with 12+ years of experience">
+    <meta property="twitter:image" content="https://gravatar.com/avatar/default">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dev-moe-kyawaung.github.io/">
+    
+    <title>Moe Kyaw Aung | Senior Android Developer - Cyberpunk Portfolio V2</title>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="cyber-spinner"></div>
+            <div class="loader-text">INITIALIZING SYSTEM...</div>
+        </div>
+    </div>
+    
+    <!-- Code Rain Canvas -->
+    <canvas id="codeRain"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fab fa-android me-2"></i>
+                Moe Kyaw Aung
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-skills.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-skills.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects-services.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects-services.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience-contact.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience-contact.html#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience-contact.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">MOE KYAW AUNG</h1>
+            <p class="hero-subtitle">Senior Android Developer</p>
+            <p class="hero-description">
+                Building world-class mobile and web applications with 12+ years of experience. 
+                Expert in Android development, AI integration, cloud architecture, and modern development 
+                practices that deliver exceptional user experiences.
+            </p>
+            <div class="hero-buttons">
+                <a href="projects-services.html" class="cyber-btn cyber-btn-primary">
+                    <i class="fas fa-rocket me-2"></i>View Projects
+                </a>
+                <a href="experience-contact.html#contact" class="cyber-btn cyber-btn-secondary">
+                    <i class="fas fa-envelope me-2"></i>Contact Me
+                </a>
+                <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="cyber-btn">
+                    <i class="fab fa-github me-2"></i>GitHub
+                </a>
+            </div>
+        </div>
+        
+        <div class="floating-cube parallax-element" style="top: 20%; left: 10%;" data-speed="2"></div>
+        <div class="floating-cube parallax-element" style="top: 60%; right: 15%;" data-speed="-2"></div>
+        <div class="floating-cube parallax-element" style="top: 40%; left: 80%;" data-speed="3"></div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="3000">0</div>
+                    <div class="stat-label">Apps Delivered</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="122">0</div>
+                    <div class="stat-label">Repositories</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="5000000">0</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Moe Kyaw Aung - Senior Android Developer with 12+ years of experience building world-class mobile and web applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about-skills.html">About</a></p>
+                    <p><a href="projects-services.html">Projects</a></p>
+                    <p><a href="experience-contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="https://github.com/Dev-moe-kyawaung/" target="_blank"><i class="fab fa-github me-2"></i>GitHub</a></p>
+                    <p><a href="https://gravatar.com/moekyawaung2026" target="_blank"><i class="fas fa-user me-2"></i>Gravatar</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Moe Kyaw Aung. All Rights Reserved. | Built with <i class="fas fa-heart text-neon-pink"></i> and Cyberpunk Aesthetics</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
