@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+User-agent: *
+Allow: /
+
+Sitemap: https://dev-moe-kyawaung.github.io/sitemap.xml
