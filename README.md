@@ -60,4 +60,31 @@ portfolio/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Dev-moe-kyawaung/portfolio.git
-   cd portfolio
+   cd portfolio````
+
+
+##  Content
+Update HTML files with your information
+Replace images in /images folder
+Update links to your social profiles
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+🤝 Contributing
+Fork the repository
+Create feature branch (git checkout -b feature/AmazingFeature)
+Commit changes (git commit -m 'Add AmazingFeature')
+Push to branch (git push origin feature/AmazingFeature)
+Open Pull Request
+📞 Contact
+Moe Kyaw Aung - Senior Android Developer
+📧 Email: moekyawaung@programmer.net
+🌐 Portfolio: https://dev-moe-kyawaung.github.io/
+🐙 GitHub: https://github.com/Dev-moe-kyawaung/
+📱 Location: Myanmar 🇲🇲 | Thailand 🇹🇭 | Remote 🌍
+🙏 Acknowledgments
+Font Awesome - Icons
+Google Fonts - Typography
+Bootstrap 5 - UI Framework
+GitHub Pages - Hosting
+## Built with ❤️ and ☕ by Moe Kyaw Aung
+Last Updated: January 2024
