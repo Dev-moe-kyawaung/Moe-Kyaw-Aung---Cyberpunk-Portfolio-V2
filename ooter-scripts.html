@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer - Moe Kyaw Aung Portfolio</title>
+    <!-- Include all CSS -->
+    <style>
+        /* Include all previous CSS */
+        
+        footer {
+            background: var(--darker-bg);
+            border-top: 2px solid var(--neon-cyan);
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--neon-cyan);
+            margin-bottom: 1.5rem;
+        }
+        
+        .ai-assistant {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 70px; height: 70px;
+            background: var(--dark-bg);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: var(--neon-glow-cyan);
+            animation: aiPulse 2s ease-in-out infinite;
+        }
+        @keyframes aiPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(0, 243, 255, 0.6); }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px; left: 30px;
+            width: 50px; height: 50px;
+            background: var(--dark-bg);
+            border: 2px solid var(--neon-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-pink);
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include all sections from Parts 1-4 -->
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Moe Kyaw Aung - Senior Android Developer with 12+ years of experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about-skills.html">About</a></p>
+                    <p><a href="projects-services.html">Projects</a></p>
+                    <p><a href="experience-contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="https://github.com/Dev-moe-kyawaung/" target="_blank">GitHub</a></p>
+                    <p><a href="https://gravatar.com/moekyawaung2026" target="_blank">Gravatar</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Moe Kyaw Aung. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="ai-assistant" id="aiAssistant">
+        <i class="fas fa-robot"></i>
+    </div>
+    
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Include ALL JavaScript from the original complete file
+        // (Preloader, Navbar scroll, Counter animation, Intersection Observer,
+        //  Parallax, Magnetic hover, Back to top, Contact form, AI Assistant,
+        //  Code Rain, Hero particles, etc.)
+    </script>
+</body>
+</html>
